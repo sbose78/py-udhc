@@ -1,0 +1,173 @@
+<html>                                                                  
+ <head>                            
+
+<link rel="stylesheet" type="text/css" href="healthstyle.css" media="screen" />                                      
+			<script type="text/javascript" src="js/jquery.js"></script>          
+			<script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
+			<link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
+
+	        <script type="text/javascript">                                         
+
+
+					$(document).ready(function() {
+
+						   $("a").click(function() {
+						     alert("Hello world!");
+						   });
+
+						    $("#patient_name").click(function() {
+
+								alert("clicked");
+						    });
+
+
+						    $('.gallery a').lightBox();						
+
+						    $(".gallery img").attr("height","100px").attr("width","100px");
+						    //$(".gallery img")
+
+					 });
+
+			 </script>                                                               
+        </head>                                                                 
+	<body>                                                                  
+
+<br>
+
+
+					<div id= 'patient_name_details'>
+
+						 <img width="100px" height="100px"
+
+						 src="http://www.greendiary.com/wp-content/uploads/2012/07/carnivorous-plants-3_ptcsy_11446.jpg"> 
+					</div>
+
+
+					<div id= 'patient_name' >
+					PATIENT NAME
+					</div>
+
+					<div class="divider">
+					</div>
+
+					<br>
+					<br>
+
+					<table>
+
+					 	<tr>
+								<td class = "date_col">
+
+									7 Aug, 2012
+
+								</td>
+							    <td>
+
+							    	
+							    		<div class = "narrative">
+
+							    			<b> This is what the issue is about </b>
+
+							    			<br><br>
+
+							    			As an example, when I'm creating a form it pains me that I have to embed a colon into the markup at the end of the label text. We know why we do this, so that our input box has some kind of “stop” before it, making the view to the user just that little bit cleaner and easier on the eye. Then of course the client asks us if we can change the colon to a hyphen or a comma and we huff and puff because we've embedded these visual cues into the mark-up of all of our pages and doing a search and replace on a colon in an entire site can be a bit hit and miss at the best of times.
+
+							    		</div>	
+							    </td>	
+
+							    <td>
+
+							    	<div class="scans">
+
+												<div class="gallery">
+
+												            <a href="photos/image1.jpg" title="Utilize a flexibilidade dos seletores da jQuery e crie um grupo de imagens como desejar. $('#gallery').lightBox();">
+												                <img src="photos/thumb_image1.jpg" width="72" height="72" alt="" />
+												            </a>
+												 </div>
+									</div>
+								</td>
+
+						</tr>
+						
+						<tr>
+
+											<td>
+													9 AUG 2012
+
+											</td>
+
+
+
+											<td>
+
+												<div class="narrative">
+													
+													
+													About this photo
+												</div>
+												
+
+											</td>
+
+
+											<td>
+
+												<div class="scans">
+
+																<div class="gallery">
+
+																            <a href="photos/image2.jpg" title="Utilize a flexibilidade dos seletores da jQuery e crie um grupo de imagens como desejar. $('#gallery a').lightBox();">
+																                <img src="photos/thumb_image2.jpg" width="72" height="72" alt="" />
+																            </a>
+																 </div>
+												</div>
+
+											</td>
+						</tr>	
+
+
+						<tr>
+
+											<td class ="date_col">
+													9 AUG 2012
+
+											</td>
+
+
+
+											<td>
+
+												<div class="narrative">
+													
+													
+													About this photo
+												</div>
+												
+
+											</td>
+
+
+											<td>
+
+												<div class="scans">
+
+																<div class="gallery">
+
+																             <a href="photos/image3.jpg" title="Utilize a flexibilidade dos seletores da jQuery e crie um grupo de imagens como desejar. $('#gallery a').lightBox();">
+												                <img src="photos/thumb_image3.jpg" width="72px" height="72" alt="" />
+												            </a>
+																 </div>
+												</div>
+
+											</td>
+						</tr>	
+
+
+												  
+
+
+					</table>
+
+	 </body>                                                                 
+ </html>

@@ -1,0 +1,135 @@
+<html>                                                                  
+ <head>                            
+
+<!JQUERY>
+
+
+
+<link rel="stylesheet" type="text/css" href="healthstyle.css" media="screen" />                                      
+<script type="text/javascript" src="js/jquery.js"></script>          
+
+
+<!LIGHTBOX>                            
+
+	<link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
+<script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
+
+<style type="text/css">
+
+#gallery-issue 
+{
+	margin-left: 20%;
+	width: 60%;
+	margin-right: 20%;
+}
+
+#gallery-issue ul li { display: inline; }
+
+</style>
+
+
+<! CLEDITOR >
+
+
+ <link rel="stylesheet" type="text/css" href="cleditor/jquery.cleditor.css" /> 
+ <script type="text/javascript" src="cleditor/jquery.cleditor.js"></script>
+
+<!JQUERY ONLOADS>
+
+	        <script type="text/javascript">                                         
+
+
+					$(document).ready(function() {
+
+						  
+						    $("#patient_name").click(function() {
+
+								alert("clicked");
+						    });
+
+
+						    $('#gallery-issue a').lightBox();						
+
+						    $("#gallery-issue img").attr("height","200px").attr("width","200px");
+						    //$(".gallery img")
+
+					 });
+
+			 </script>                                                               
+        </head>                                                                 
+	<body>                                                                  
+
+<br>
+
+
+					<div id= 'patient_name_details'>
+
+						 <img width="100px" height="100px"
+
+						 src=""> 
+					</div>
+
+
+					<div id= 'patient_name' >
+					PATIENT NAME
+					</div>
+
+					<div class="divider">
+					</div>
+
+					<br>
+					<br>
+
+
+		<div id="issue_about">
+
+			Write your about the issue here
+
+		</div>					
+
+		<div id="issue_narrative">
+
+			<! ISSUE NARRATIVE GOES HERE - text or image>
+
+			This page just loads the jquery.js library (make sure the URL points to where you stored your copy of jquery! This example assumes that you store it in the same directory as this example file). Two comments indicate where we will expand this template with code. 
+
+
+		</div>					
+
+
+
+			<div id="gallery-issue">
+			    <ul>
+			        <li>
+			            <a href="photos/image1.jpg" title="Utilize a flexibilidade dos seletores da jQuery e crie um grupo de imagens como desejar. $('#gallery').lightBox();">
+			                <img src="photos/thumb_image1.jpg" width="72" height="72" alt="" />
+			            </a>
+			        </li>
+			        <li>
+			            <a href="photos/image2.jpg" title="Utilize a flexibilidade dos seletores da jQuery e crie um grupo de imagens como desejar. $('#gallery a').lightBox();">
+			                <img src="photos/thumb_image2.jpg" width="72" height="72" alt="" />
+			            </a>
+			        </li>
+			        <li>
+			            <a href="photos/image3.jpg" title="Utilize a flexibilidade dos seletores da jQuery e crie um grupo de imagens como desejar. $('#gallery a').lightBox();">
+			                <img src="photos/thumb_image3.jpg" width="72" height="72" alt="" />
+			            </a>
+			        </li>
+			        <li>
+			            <a href="photos/image4.jpg" title="Utilize a flexibilidade dos seletores da jQuery e crie um grupo de imagens como desejar. $('#gallery a').lightBox();">
+			                <img src="photos/thumb_image4.jpg" width="72" height="72" alt="" />
+			            </a>
+			        </li>
+			        <li>
+			            <a href="photos/image5.jpg" title="Utilize a flexibilidade dos seletores da jQuery e crie um grupo de imagens como desejar. $('#gallery a').lightBox();">
+			                <img src="photos/thumb_image5.jpg" width="72" height="72" alt="" />
+			            </a>
+			        </li>
+			    </ul>
+			</div>
+
+
+
+	</body>
+</html>	
+

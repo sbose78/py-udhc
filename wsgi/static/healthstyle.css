@@ -1,0 +1,174 @@
+
+body
+{
+	background-color: #969090;
+}
+
+#patient_name
+{
+	padding: 5px;
+	border-radius: 20px;
+	border-style: solid;
+	border-color: white;
+	background-color: #0D5995;
+	width: 20%;
+	text-align: center;
+	float: left;
+	color: white;
+	cursor: pointer;
+
+
+}
+
+#patient_name_details
+{
+	padding: 5px;
+	background-color: black;
+	color: white;
+	float: left;
+	width: 90px;
+	height:90px;
+}
+
+.divider
+{
+	clear: both;
+}
+
+.narrative
+{
+
+	padding:  10px;	
+	margin-top: 50px;
+	width: 600px ;
+	border-radius:10px;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	vertical-align: middle;
+
+
+}
+
+.date_col
+{
+
+	width:200px;
+	text-align: center;
+	vertical-align: middle;;
+
+}
+
+.gallery {
+		margin: 20px;
+		
+		padding: 5px;
+		width: 400px;
+		vertical-alige; }
+.gallery ul img {
+		border: 5px solid #3e3e3e;
+		border-width: 5px 5px 10px;
+}
+.gallery a:hover img {
+	border: 5px solid #fff;
+	border-width: 5px 5px 5px 5px;
+	color: #fff;
+}
+.gallery a:hover { color: #fff; }
+
+
+#narrative_form
+{
+
+	background-color: white;
+	border-style: solid;
+	border-radius: 5px;
+	border-color: black;
+	padding: 10px;
+	margin: 10px;
+	width: 50%;
+	text-align: center;
+
+}
+
+.label_format
+{
+
+	color: white;
+	background-color: #3178F0;
+	border-radius: 5px;
+	padding: 5px;
+	vertical-align: top;
+	text-align: center;
+
+
+
+
+}
+
+
+#issue_narrative
+{
+	margin-top: 50px;
+	margin-left: 20%;
+	width:60%;
+	border-style: solid;
+	border-color: black;
+	background-color: white;
+	padding: 10px;
+	border-radius: 6px;
+
+
+}
+
+#issue_about
+{
+
+	border: solid;
+	border-color: #3178F0;
+	background-color: white;
+	color: black;
+	padding: 6px;
+	border-radius: 5px;
+	width: 90%;
+
+}
+
+#previously_uploaded
+{
+
+	vertical-align: top;
+	padding: 20px;
+
+}
+
+.p_case
+{
+	margin-top: 6px;
+	padding: 5px;
+	border-radius: 4px;
+	background-color: white;
+	color: black;
+}
+
+.p_case a 
+{
+	text-decoration: none;
+
+}
+
+.p_case:hover
+{
+	background-color: black;
+	color: white;
+}
+
+.p_case a:hover
+
+		{
+			background-color: black;
+			color: white;
+			
+
+		};
+

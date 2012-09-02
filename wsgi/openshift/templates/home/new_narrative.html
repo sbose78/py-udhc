@@ -1,0 +1,169 @@
+<html>                                                                  
+ <head>
+
+<link rel="stylesheet" type="text/css" href="healthstyle.css" media="screen" />                                      
+<script type="text/javascript" src="js/jquery.js"></script>          
+
+
+<!LIGHTBOX>                            
+
+	<link rel="stylesheet" type="text/css" href="css/jquery.lightbox-0.5.css" media="screen" />
+<script type="text/javascript" src="js/jquery.lightbox-0.5.js"></script>
+
+
+
+<! CLEDITOR >
+
+
+ <link rel="stylesheet" type="text/css" href="cleditor/jquery.cleditor.css" /> 
+ <script type="text/javascript" src="cleditor/jquery.cleditor.js"></script>
+
+
+
+
+	        <script type="text/javascript">                                         
+
+
+					$(document).ready(function() 
+					{
+						$("#narrative_div_image").hide();
+						$("#narrative_div_text").show();								
+
+
+						$("label").addClass("label_format");
+
+						$("button").click(function(e)
+						{
+
+							if($(this).html()=="Upload narrative as a SCANNED IMAGE")
+							{
+								$("#narrative_div_text").hide();
+								$("#narrative_div_image").show();								
+							}
+							else
+							{
+								$("#narrative_div_image").hide();
+								$("#narrative_div_text").show();								
+							}
+
+							e.preventDefault();
+						});
+
+						$("#narrative_text").cleditor({
+
+							width:670,
+							height:400
+
+						});
+
+
+						$(".p_case a").lightbox();
+
+					});
+
+
+
+			 </script>                                                               
+        </head>                                                                 
+	<body> 
+
+
+	<div id= 'patient_name_details'>
+
+						 <img width="100px" height="100px"
+
+						 src=""/> 
+					</div>
+
+
+					<div id= 'patient_name' >
+					PATIENT NAME
+					</div>
+
+					<div class="divider">
+					</div>
+
+					<br>
+					<br>
+
+<table>
+
+	<tr>
+
+
+			<td  id="narrative_form">
+
+
+
+							<form method="post" >
+
+								<p>
+
+									<button>Upload narrative as a SCANNED IMAGE</button>
+									<button>Upload narrative as a TEXT</button>
+								</p>
+
+								<B> New Patient narrative </B>
+
+								<br><br>
+
+
+									<div id="narrative_div_text">	
+										<label> Enter narrative as a text</label>
+
+										<p>
+
+											<textarea rows="20" cols="80" id="narrative_text">Enter the data here</textarea>
+										</p>
+
+										
+									</div>
+
+									<div id="narrative_div_image">
+
+
+											<label>Upload Scanned image of narrative</label>
+											<p>
+
+												<input id="narrative_file" type = "file" >
+											</p>
+									</div>
+
+									<p>
+										<input type="submit"> 
+
+									</p>
+							</form>	
+			</td>
+
+
+			<td id="previously_uploaded" >
+
+
+					<label>The following issues were previously uploaded</label>
+
+					<div class="p_case">
+						<a href="https://www.google.com/">Click here</a>
+
+					</div>
+
+				
+					<div class="p_case">
+							<a href="https://www.google.com/">Click here</a>
+
+					</div>
+
+					<div class="p_case">
+							<a href="https://www.google.com/">Click here</a>
+					</div>
+
+
+			</td>
+
+	</tr>
+
+</table>
+
+
+	</body>                                                                 
+</html>
