@@ -25,7 +25,7 @@ def health_case(request):
 	c=Context({
 
 		})
-	return HttpResponse(t.render(c))    
+	return HttpResponse(t.render(c))
 
 
 
