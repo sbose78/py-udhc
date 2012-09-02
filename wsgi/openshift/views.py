@@ -21,7 +21,7 @@ def new_narrative(request):
 	return HttpResponse(t.render(c))    
 
 def health_case(request):
-	t=loader.get_template('home/health_issue_details.html')
+	t=loader.get_template('home/health-issue-details.html')
 	c=Context({
 
 		})
