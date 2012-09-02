@@ -8,7 +8,10 @@ admin.autodiscover()
 urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'openshift.views.home', name='home'),
-    url(r'^narrative/', 'openshift.views.narrative', name='narrative'),
+    url(r'^new_narrative.udhc', 'openshift.views.new_narrative', name='new_narrative'),
+    url(r'^health_case.udhc', 'openshift.views.health_case', name='health_case'),
+    url(r'^health_record.udhc', 'openshift.views.health_record', name='health_record'),
+
     url(r'^(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.STATIC_ROOT }),
     # url(r'^openshift/', include('openshift.foo.urls')),
     # Uncomment the admin/doc line below to enable admin documentation:
