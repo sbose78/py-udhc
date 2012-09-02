@@ -8,6 +8,9 @@ urlpatterns = patterns('',
     # Examples:
     url(r'^$', 'openshift.views.home', name='home'),
     url(r'^narrative/', 'openshift.views.narrative', name='narrative'),
+
+    url(r'^/(?P<path>.*)$', 'django.views.static.serve',{'document_root':settings.STATIC_ROOT'),
+    
     # url(r'^openshift/', include('openshift.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
