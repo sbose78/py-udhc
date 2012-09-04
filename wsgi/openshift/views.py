@@ -33,6 +33,9 @@ def process_health_case(request):
 	collection = db['controller']
 	data={"a1":about, "b1": details}
 	collection.insert(data)
-	new_narrative(request)
+	t=loader.get_template('home/health-issue-details.html')
+	c=Context({
 
+		})
+	return HttpResponse(t.render(c))
 
