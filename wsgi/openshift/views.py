@@ -16,13 +16,6 @@ def health_record(request):
 	return HttpResponse(t.render(c))    
 
 def new_narrative(request):
-
-	connection = Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
-	db=connection['BOSE']
-	collection = db['controller']
-	data={"a1":"b", "b1":"b"}
-	collection.insert(data)
-
 	t=loader.get_template('home/new_narrative.html')
 	c=Context({
 
@@ -39,4 +32,9 @@ def health_case(request):
 def process_health_case(request):
 	about = request.POST['about']
 	details = request.POST['details']
+	connection = Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
+	db=connection['BOSE']
+	collection = db['controller']
+	data={"a1":"b", "b1":"b"}
+	collection.insert(data)
 
