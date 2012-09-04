@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from pymongo.connection import Connection
 from django.shortcuts import get_object_or_404, render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
-
+from django.template import RequestContext
 
 def home(request):
     return render_to_response('home/home.html')
@@ -17,7 +17,7 @@ def health_record(request):
 
 def new_narrative(request):
 	 return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
-	 
+
 def health_case(request):
 	t=loader.get_template('home/health-issue-details.html')
 	c=Context({
