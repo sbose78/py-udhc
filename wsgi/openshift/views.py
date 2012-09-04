@@ -31,7 +31,7 @@ def process_health_case(request):
 	connection = Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
 	db=connection['BOSE']
 	collection = db['controller']
-	data={"a1":about, "b1": narrative_text }
+	data={"a1":about, "b1": details}
 	collection.insert(data)
 	new_narrative(request)
 
