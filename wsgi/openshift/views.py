@@ -18,7 +18,7 @@ def health_record(request):
 def new_narrative(request):
 	t=loader.get_template('home/new_narrative.html')
 	c=Context({
-
+			context_instance=RequestContext(request)
 		})
 	return HttpResponse(t.render(c))    
 
@@ -37,4 +37,6 @@ def process_health_case(request):
 	collection = db['controller']
 	data={"a1":about, "b1": narrative_text }
 	collection.insert(data)
+	new_narrative(request)
+
 
