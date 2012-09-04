@@ -2,7 +2,7 @@ import os
 from django.shortcuts import render_to_response
 from django.template import Context, loader
 from django.http import HttpResponse
-from pymongo.connection import connection
+from pymongo.connection import Connection
 
 
 def home(request):
@@ -22,7 +22,7 @@ def new_narrative(request):
 	collection = db['controller']
 	data={"a1":"b", "b1":"b"}
 	collection.insert(data)
-	
+
 	t=loader.get_template('home/new_narrative.html')
 	c=Context({
 
