@@ -10,7 +10,10 @@ urlpatterns = patterns('',
     url(r'^$', 'openshift.views.home', name='home'),
     url(r'^new_narrative.udhc', 'openshift.views.new_narrative', name='new_narrative'),
     url(r'^health_case.udhc', 'openshift.views.health_case', name='health_case'),
+    url(r'^submit_health_case.udhc', 'openshift.views.process_health_case', name='process_health_case'),
     url(r'^health_record.udhc', 'openshift.views.health_record', name='health_record'),
+
+
 
     url(r'^(?P<path>.*)$', 'django.views.static.serve',{'document_root': settings.STATIC_ROOT }),
     # url(r'^openshift/', include('openshift.foo.urls')),

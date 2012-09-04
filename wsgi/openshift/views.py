@@ -31,10 +31,10 @@ def health_case(request):
 
 def process_health_case(request):
 	about = request.POST['about']
-	details = request.POST['details']
+	details = request.POST['narrative_text']
 	connection = Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
 	db=connection['BOSE']
 	collection = db['controller']
-	data={"a1":"b", "b1":"b"}
+	data={"a1":about, "b1": narrative_text }
 	collection.insert(data)
 
