@@ -1,8 +1,8 @@
 import os
-from django.shortcuts import render_to_response
-from django.template import Context, loader
 from django.http import HttpResponse
 from pymongo.connection import Connection
+from django.shortcuts import get_object_or_404, render_to_response
+from django.http import HttpResponseRedirect, HttpResponse
 
 
 def home(request):
@@ -16,12 +16,8 @@ def health_record(request):
 	return HttpResponse(t.render(c))    
 
 def new_narrative(request):
-	t=loader.get_template('home/new_narrative.html')
-	c=Context({
-			context_instance=RequestContext(request)
-		})
-	return HttpResponse(t.render(c))    
-
+	 return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
+	 
 def health_case(request):
 	t=loader.get_template('home/health-issue-details.html')
 	c=Context({
