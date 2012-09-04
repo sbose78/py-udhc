@@ -5,6 +5,7 @@ from django.shortcuts import get_object_or_404, render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
 from django.template import RequestContext
 
+
 def home(request):
     return render_to_response('home/home.html')
 
@@ -33,9 +34,5 @@ def process_health_case(request):
 	collection = db['controller']
 	data={"a1":about, "b1": details}
 	collection.insert(data)
-	t=loader.get_template('home/health-issue-details.html')
-	c=Context({
-
-		})
-	return HttpResponse(t.render(c))
+	return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
 
