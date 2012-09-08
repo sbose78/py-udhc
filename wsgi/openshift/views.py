@@ -35,12 +35,12 @@ def process_health_case(request):
 	db=connection['BOSE']
 	if image :
 		fs=gridfs.GridFS(db)
-		fs.put(image, filename="image_scan2")
+		fs.put(image,filename="image_scan2")
 	else:
 		#do nothing
-
+	
+	return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
 	#collection = db['controller']
 	#data={"a1":about, "b1": details}
 	#collection.insert(data)
-	return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
-	
+
