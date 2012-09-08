@@ -32,7 +32,6 @@ def process_health_case(request):
 	details = request.POST['narrative_text']
 	image=request.FILES['image_scan']
 	connection = Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
-
 	if images:
 		db=connection['BOSE']
 		fs=gridfs.GridFS(db)
@@ -40,7 +39,4 @@ def process_health_case(request):
 	else:
 		#nothing
 	return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
-	#collection = db['controller']
-	#data={"a1":about, "b1": details}
-	#collection.insert(data)
 
