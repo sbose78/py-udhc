@@ -34,7 +34,7 @@ def process_health_case(request):
 	db=connection['BOSE']
 	collection = db['controller']
 
-	if 'image_scan' in request.POST.keys():
+	if 'image_scan' in request.FILES.keys():
 		image=request.FILES['image_scan']
 		fs=gridfs.GridFS(db)
 		file_id = fs.put(image,filename="image_scan2")
