@@ -31,14 +31,15 @@ def process_health_case(request):
 	about = request.POST['about']
 	details = request.POST['narrative_text']
 	image=request.FILES['image_scan']
-	if(image) :	
+	
+	if image :	
 		connection = Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
 		db=connection['BOSE']
 		fs=gridfs.GridFS(db)
 		fs.put(image, filename="image_scan2")	
 	else:
 		#do nothing
-	
+
 	#collection = db['controller']
 	#data={"a1":about, "b1": details}
 	#collection.insert(data)
