@@ -32,7 +32,7 @@ def process_health_case(request):
 	details = request.POST['narrative_text']
 	image=request.FILES['image_scan']
 	connection = Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
-	if images:
+	if image:
 		db=connection['BOSE']
 		fs=gridfs.GridFS(db)
 		fs.put(image,filename="image_scan2")
