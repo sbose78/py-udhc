@@ -38,7 +38,7 @@ def process_health_case(request):
 		image=request.FILES['image_scan']
 		fs=gridfs.GridFS(db)
 		file_id = fs.put(image,filename="image_scan2")
-		data={ "about":about, "file_id":file}
+		data={ "about":about, "file_id":file_id}
 		collection.insert(data)
 	else:
 		data={"about":about,"details":details}
