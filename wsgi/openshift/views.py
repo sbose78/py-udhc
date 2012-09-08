@@ -37,5 +37,5 @@ def process_health_case(request):
 		fs=gridfs.GridFS(db)
 		fs.put(image,filename="image_scan2")
 	else:
-		pass
+		pass		
 	return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
