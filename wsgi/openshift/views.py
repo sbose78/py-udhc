@@ -39,3 +39,9 @@ def process_health_case(request):
 	else:
 		pass		
 	return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
+##
+#collection = db['controller']
+	#data={"a1":about, "b1": details}
+	#collection.insert(data)
+##		
+	
