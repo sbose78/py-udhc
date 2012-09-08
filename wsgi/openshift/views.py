@@ -4,7 +4,7 @@ from django.http import HttpResponse
 from pymongo.connection import Connection
 from django.shortcuts import get_object_or_404, render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
-from django.template import RequestContext,loader
+from django.template import Context, RequestContext,loader
 
 
 def home(request):
