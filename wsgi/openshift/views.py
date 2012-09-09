@@ -54,5 +54,5 @@ def my_image(request,image_id):
 	db=connection['BOSE']
 	fs=gridfs.GridFS(db)
 	image_id='504ba4c9cd274922b1000000'
-	image_data = fs.read(image_id)
+	image_data = fs.get(image_id)
 	return HttpResponse(image_data, mimetype="image/png")
