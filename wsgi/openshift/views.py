@@ -5,7 +5,7 @@ from pymongo.connection import Connection
 from django.shortcuts import get_object_or_404, render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
 from django.template import Context, RequestContext,loader
-from bson.object import ObjectId
+from bson.objectid import ObjectId
 
 
 def home(request):
