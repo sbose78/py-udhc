@@ -53,6 +53,6 @@ def my_image(request,image_id):
 	connection = Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
 	db=connection['BOSE']
 	fs=gridfs.GridFS(db)
-	image_id='504ba4c9cd274922b1000000'
+	image_id="504ba4c9cd274922b1000000"
 	image_data = fs.get(image_id)
 	return HttpResponse(image_data, mimetype="image/png")
