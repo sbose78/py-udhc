@@ -56,6 +56,4 @@ def my_image(request,image_id):
 	image_id='504ba4c9cd274922b1000000'
 	image_data = fs.read(image_id)
     return HttpResponse(image_data, mimetype="image/png")
-
-
-
+    
