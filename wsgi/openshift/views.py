@@ -28,28 +28,34 @@ def health_case(request):
 		})
 	return HttpResponse(t.render(c))
 
+
+#upload file or health case
+
 def process_health_case(request):
 	about = request.POST['about']
 	details = request.POST['narrative_text']
+	sci_name=request.POST['name']
 	connection = Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
 	db=connection['BOSE']
-	collection = db['controller']
+	collection = db['healthcase']
 
 	if 'image_scan' in request.FILES.keys():
 		image=request.FILES['image_scan']
 		fs=gridfs.GridFS(db)
-		file_id = fs.put(image,filename="image_scan3")
-		data={ "about":about, "file_id":file_id}
+		file_id = fs.put(image,filename="about")
+		data={ "about":about, "file_id":file_id , "name" : sci_name }
 		collection.insert(data)
 	else:
-		data={"about":about,"details":details}
+		data={"about":about,"details":details, "name" : sci_name }
 		collection.insert(data)		
 	return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
 ##
 #collection = db['controller']
 	#data={"a1":about, "b1": details}
 	#collection.insert(data)
-##		
+
+
+##	Display image
 def my_image(request,image_id):
 	connection = Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
 	db=connection['BOSE']
