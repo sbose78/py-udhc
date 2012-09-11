@@ -63,7 +63,7 @@ def my_image(request,image_id):
 	#image_id="504ba4c9cd274922b1000000"
 	image_data = fs.get(ObjectId(image_id))
 	return HttpResponse(image_data, mimetype="image/png")
-	
+
 def add_more_reports():
 	about = request.POST['about']
 	patient_id=request.POST['patient_id']
@@ -75,9 +75,9 @@ def add_more_reports():
 	
 	fs=gridfs.GridFS(db)
 	file_id = fs.put(image,filename="about")
-	data={ "about":about, "file_id":file_id }
+	data={ "patient_id" : patient_id,  "about":about, "file_id":file_id }
 	collection.insert(data)
 	return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
 	
-def new_health_report():
+def new_health_report(request):
 	return render_to_response('home/new_health_report.html',{ }, context_instance=RequestContext(request))
