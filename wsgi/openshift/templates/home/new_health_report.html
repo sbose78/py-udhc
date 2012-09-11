@@ -32,30 +32,7 @@
 
 						$("label").addClass("label_format");
 
-						$("button").click(function(e)
-						{
-
-							if($(this).html()=="Upload narrative as a SCANNED IMAGE")
-							{
-								$("#narrative_div_text").hide();
-								$("#narrative_div_image").show();								
-							}
-							else
-							{
-								$("#narrative_div_image").hide();
-								$("#narrative_div_text").show();								
-							}
-
-							e.preventDefault();
-						});
-
-						$("#narrative_text").cleditor({
-
-							width:570,
-							height:300
-
-						});
-
+						
 
 						$(".p_case a").lightBox();
 
