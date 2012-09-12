@@ -66,6 +66,7 @@ def my_image(request,image_id):
 
 def add_more_reports():
 	about = request.POST['about']
+	health_case_id=request.POST['health_case_id']
 	patient_id=request.POST['patient_id']
 	image=request.FILES['image_scan']
 
@@ -75,7 +76,7 @@ def add_more_reports():
 	
 	fs=gridfs.GridFS(db)
 	file_id = fs.put(image,filename="about")
-	data={ "patient_id" : patient_id,  "about":about, "file_id":file_id }
+	data={ "patient_id" : patient_id, "health_case_id":health_case_id, "about":about, "file_id":file_id }
 	collection.insert(data)
 	return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
 	
