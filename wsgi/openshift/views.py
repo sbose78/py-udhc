@@ -64,7 +64,7 @@ def my_image(request,image_id):
 	image_data = fs.get(ObjectId(image_id))
 	return HttpResponse(image_data, mimetype="image/png")
 
-def add_more_reports():
+def add_more_reports(request):
 	about = request.POST['about']
 	health_case_id=request.POST['health_case_id']
 	patient_id=request.POST['patient_id']
