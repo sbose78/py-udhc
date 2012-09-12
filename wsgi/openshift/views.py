@@ -75,7 +75,7 @@ def add_more_reports():
 	collection = db['healthreport']
 	
 	fs=gridfs.GridFS(db)
-	file_id = fs.put(image,filename="about")
+	file_id = fs.put(image,filename=about)
 	data={ "patient_id" : patient_id, "health_case_id":health_case_id, "about":about, "file_id":file_id }
 	collection.insert(data)
 	return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
