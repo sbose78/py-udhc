@@ -7,19 +7,33 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.template import Context, RequestContext,loader
 from bson.objectid import ObjectId
 
+my_sql_connection = Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
+
 
 def home(request):
     return render_to_response('home/home.html')
 
 def health_record(request):
 	t=loader.get_template('home/test.html')
-	c=Context({
+	care_seeker_name=request.GET['name']
 
-		})
+	connection=my_sql_connection
+	db=connection['BOSE']
+	collection=db['healthcase']
+	all_narratives=collection.find({
+		"name":care_seeker_name
+	})
+
+	c=Context({ 
+		"narratives_list":all_narratives
+	})
 	return HttpResponse(t.render(c))    
 
 def new_narrative(request):
 	 return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
+
+def fb(request):
+	 return render_to_response('home/fb-auth.html',{ }, context_instance=RequestContext(request))
 
 def health_case(request):
 	t=loader.get_template('home/health-issue-details.html')
@@ -82,3 +96,6 @@ def add_more_reports(request):
 	
 def new_health_report(request):
 	return render_to_response('home/new_health_report.html',{ }, context_instance=RequestContext(request))
+
+def display_health_case(request,case_id):
+	
