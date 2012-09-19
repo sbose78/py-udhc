@@ -9,6 +9,8 @@ if os.environ.has_key('OPENSHIFT_REPO_DIR'):
 
 PROJECT_DIR = os.path.dirname(os.path.realpath(__file__))
 
+TEMPLATE_STRING_IF_INVALID = ''
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
