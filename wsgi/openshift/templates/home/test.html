@@ -66,15 +66,15 @@
 									7 Aug, 2012
 
 								</td>
-				{%  n = narratives.narrative_text|default:"empty" %}	    								
-				{%  if n != "empty" %}
-				
+				{%  ifequal narratives.narrative_text ''
 							    <td>
 
 							
 							    	<div class = "narrative">
 
-							    			<b> {{ narratives.about }}</b>
+							    		<b> 
+							    			{{ narratives.about }}
+							    		</b>
 
 							    			<br><br>
 
