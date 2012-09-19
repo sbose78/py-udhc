@@ -56,9 +56,8 @@
 
 					<table>
 
-		{%  for narratives in narratives_list	
-				print('hi')
-		%}
+		{%  for narratives in narratives_list  %}
+
 
 
 					 	<tr>
@@ -67,9 +66,10 @@
 									7 Aug, 2012
 
 								</td>
+				<%  if narratives.narrative_text %>	    								
 							    <td>
 
-							    	
+							
 							    	<div class = "narrative">
 
 							    			<b> {{ narratives.about }}</b>
@@ -80,19 +80,20 @@
 
 							    		</div>	
 							    </td>	
-
+				<% else %>
 							    <td>
 
 							    	<div class="scans">
 
 												<div class="gallery">
-
+											{{ narratives.file_id }}
 												            <a href="/photos/image1.jpg" title="Utilize a flexibilidade dos seletores da jQuery e crie um grupo de imagens como desejar. $('#gallery').lightBox();">
 												                <img src="/photos/thumb_image1.jpg" width="72" height="72" alt="" />
 												            </a>
 												 </div>
 									</div>
 								</td>
+				<% endif %>
 
 						</tr>
 						
