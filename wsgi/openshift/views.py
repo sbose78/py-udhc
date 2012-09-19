@@ -25,7 +25,8 @@ def health_record(request):
 	})
 
 	c=Context({ 
-		"narratives_list":all_narratives
+		"narratives_list":all_narratives,
+		"patient_name":care_seeker_name
 	})
 	return HttpResponse(t.render(c))    
 
