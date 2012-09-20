@@ -60,13 +60,13 @@
 
 
 
-					 	<tr>
+						 	<tr>
 								<td class = "date_col">
 
 									7 Aug, 2012
 
 								</td>
-				{%  ifnotequal narratives.narrative_text '' %}
+				{%  if narratives.narrative_text %}
 							    <td>
 
 							
@@ -84,24 +84,17 @@
 							    </td>	
 				{%  else %}
 							    <td>
-
 							    	<div class="scans">
-
 												<div class="gallery">
-
 	 					    			<b> {{ narratives.about }}</b>
-
-							    			<br><br>
-
-	              										
+							    			<br><br>              										
 												            <a href="https://udhc1-nodejstest.rhcloud.com/my_image/{{ narratives.file_id }}">
 												                <img src="https://udhc1-nodejstest.rhcloud.com/my_image/{{ narratives.file_id }}" width="72" height="72" alt="" />
 												            </a>
 												 </div>
 									</div>
 								</td>
-				{%  endifnotequal %}
-
+				{%  endif %}
 						</tr>
 						
 		  {% endfor %}				
