@@ -47,7 +47,7 @@ def health_case(request):
 	})
 
 	collection_healthcase=db['healthcase']
-	narrative=collection.find({
+	narrative=collection_healthcase.find({
 		"_id":health_case_id
 	})
 
