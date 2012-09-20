@@ -94,12 +94,13 @@ body
 .label_format
 {
 
-	color: white;
-	background-color: #3178F0;
-	border-radius: 5px;
+	color: #0D5995;
+	background-color: white;
+	
 	padding: 5px;
 	vertical-align: top;
 	text-align: center;
+	margin: 5px;
 
 
 
@@ -139,6 +140,7 @@ body
 
 	vertical-align: top;
 	padding: 20px;
+
 
 }
 
