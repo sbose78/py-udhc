@@ -94,7 +94,7 @@ body
 {
 
 	color: black;
-	background-color: #FFCC68;	
+	background-color: #0D5995; 
 	padding: 5px;
 	vertical-align: top;
 	text-align: center;
@@ -147,8 +147,11 @@ body
 	margin-top: 10px;
 	padding: 5px;
 	border-radius: 4px;
-	background-color: #0D5995; 
+	
+	border-style: solid;
+	border-top: #0D5995;
 	cursor: pointer;
+
 
 	
 }
@@ -157,20 +160,9 @@ body
 {
 	
 	text-decoration: none;
-	color: white;
+	color: black;
+
+	
 
 
-}
-
-.p_case:hover
-{
-	background-color: white;
-	color: #0D5995;
-}
-
-.p_case a:hover
-{
-			
-	background-color: white;
-	color: #0D5995;
 }

@@ -97,4 +97,3 @@ def add_more_reports(request):
 	
 def new_health_report(request):
 	return render_to_response('home/new_health_report.html',{ }, context_instance=RequestContext(request))
-	
