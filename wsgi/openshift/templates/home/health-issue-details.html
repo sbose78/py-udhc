@@ -91,17 +91,16 @@
 
 			<! ISSUE NARRATIVE GOES HERE - text or image>
 
-			<% if narratative.details and narratative.details.strip %>
+			{% if narratative.details and narratative.details.strip %}
 			{{ narrative.details }}
 
-			<% else %>
+			{% else %}
 
 			 <a href="https://udhc1-nodejstest.rhcloud.com/my_image/{{ narrative.file_id }}" title="">
 			          <img src="photos/https://udhc1-nodejstest.rhcloud.com/my_image/{{ narrative.file_id }}" width="142" height="142" alt="Couldnt display image" />
 			  </a>
 
-			<% endif %>
-
+			{% endif %}
 
 
 
