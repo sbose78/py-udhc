@@ -148,28 +148,30 @@ body
 	margin-top: 6px;
 	padding: 5px;
 	border-radius: 4px;
-	background-color: white;
-	color: black;
+	background-color: #0D5995; 
+	cursor: pointer;
+
+	
 }
 
 .p_case a 
 {
+	background-color: #0D5995;
 	text-decoration: none;
+	color: white;
+
 
 }
 
 .p_case:hover
 {
-	background-color: black;
-	color: white;
+	background-color: white;
+	color: #0D5995;
 }
 
 .p_case a:hover
-
-		{
-			background-color: black;
-			color: white;
+{
 			
-
-		};
-
+	background-color: white;
+	color: #0D5995;
+}
