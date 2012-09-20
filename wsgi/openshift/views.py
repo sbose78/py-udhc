@@ -54,8 +54,8 @@ def health_case(request):
 	t=loader.get_template('home/health-issue-details.html')
 	c=Context({
 
-		"narrative":narrative;
-		"health_reports":health_reports;
+		"narrative":narrative,
+		"health_reports":health_reports
 
 		})
 	return HttpResponse(t.render(c))
