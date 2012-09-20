@@ -8,7 +8,7 @@ from django.template import Context, RequestContext,loader
 from bson.objectid import ObjectId
 
 my_sql_connection = Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
-
+my_sql_connection_string='mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE'
 
 def home(request):
     return render_to_response('home/home.html')
@@ -37,8 +37,25 @@ def fb(request):
 	 return render_to_response('home/fb-auth.html',{ }, context_instance=RequestContext(request))
 
 def health_case(request):
+
+	health_case_id=request.GET['health_case_id']
+	connection=my_sql_connection
+	db=connection['BOSE']
+	collection=db['healthreport']
+	health_reports =collection.find({
+		"health_case_id":health_case_id
+	})
+
+	collection_healthcase=db['healthcase']
+	narrative=collection.find({
+		"_id":health_case_id
+	})
+
 	t=loader.get_template('home/health-issue-details.html')
 	c=Context({
+
+		"narrative":narrative;
+		"health_reports":health_reports;
 
 		})
 	return HttpResponse(t.render(c))

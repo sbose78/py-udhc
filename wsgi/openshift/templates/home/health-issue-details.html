@@ -71,7 +71,7 @@
 
 
 					<div id= 'patient_name' >
-					PATIENT NAME
+						{{ patient_name }}
 					</div>
 
 					<div class="divider">
@@ -83,7 +83,7 @@
 
 		<div id="issue_about">
 
-			Write your about the issue here
+			{{ narrative_about }}
 
 		</div>					
 
@@ -91,7 +91,18 @@
 
 			<! ISSUE NARRATIVE GOES HERE - text or image>
 
-			This page just loads the jquery.js library (make sure the URL points to where you stored your copy of jquery! This example assumes that you store it in the same directory as this example file). Two comments indicate where we will expand this template with code. 
+			<% if narratative.details and narratative.details.strip %>
+			{{ narrative.details }}
+
+			<% else %>
+
+			 <a href="https://udhc1-nodejstest.rhcloud.com/my_image/{{ narrative.file_id }}" title="">
+			          <img src="photos/https://udhc1-nodejstest.rhcloud.com/my_image/{{ narrative.file_id }}" width="142" height="142" alt="Couldnt display image" />
+			  </a>
+
+			<% endif %>
+
+
 
 
 		</div>					
@@ -100,31 +111,15 @@
 
 			<div id="gallery-issue">
 			    <ul>
+
+			    {% for report in health_reports %}	
 			        <li>
-			            <a href="photos/image1.jpg" title="Utilize a flexibilidade dos seletores da jQuery e crie um grupo de imagens como desejar. $('#gallery').lightBox();">
-			                <img src="photos/thumb_image1.jpg" width="72" height="72" alt="" />
+			            <a href="https://udhc1-nodejstest.rhcloud.com/my_image/{{ report.file_id }}" title="{{ report.about }}">
+			          <img src="photos/https://udhc1-nodejstest.rhcloud.com/my_image/{{ report.file_id }}" width="72" height="72" alt="" />
 			            </a>
 			        </li>
-			        <li>
-			            <a href="photos/image2.jpg" title="Utilize a flexibilidade dos seletores da jQuery e crie um grupo de imagens como desejar. $('#gallery a').lightBox();">
-			                <img src="photos/thumb_image2.jpg" width="72" height="72" alt="" />
-			            </a>
-			        </li>
-			        <li>
-			            <a href="photos/image3.jpg" title="Utilize a flexibilidade dos seletores da jQuery e crie um grupo de imagens como desejar. $('#gallery a').lightBox();">
-			                <img src="photos/thumb_image3.jpg" width="72" height="72" alt="" />
-			            </a>
-			        </li>
-			        <li>
-			            <a href="photos/image4.jpg" title="Utilize a flexibilidade dos seletores da jQuery e crie um grupo de imagens como desejar. $('#gallery a').lightBox();">
-			                <img src="photos/thumb_image4.jpg" width="72" height="72" alt="" />
-			            </a>
-			        </li>
-			        <li>
-			            <a href="photos/image5.jpg" title="Utilize a flexibilidade dos seletores da jQuery e crie um grupo de imagens como desejar. $('#gallery a').lightBox();">
-			                <img src="photos/thumb_image5.jpg" width="72" height="72" alt="" />
-			            </a>
-			        </li>
+			     {% endfor %}
+
 			    </ul>
 			</div>
 
