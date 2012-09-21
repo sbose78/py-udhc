@@ -39,7 +39,7 @@ def fb(request):
 def health_case(request):
 
 	health_case_id=request.GET['health_case_id']
-	connection=my_sql_connection
+	connection=Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
 	db=connection['BOSE']
 	collection=db['healthreport']
 	health_reports =collection.find({
