@@ -68,10 +68,10 @@
 
 						 src=""> 
 					</div>
-
+{% for n in narrative %}
 
 					<div id= 'patient_name' >
-						{{ narrative.name }}
+						{{ n.name }}
 					</div>
 
 					<div class="divider">
@@ -79,7 +79,7 @@
 
 					<br>
 					<br>
-{% for n in narrative %}
+
 
 		<div id="issue_about">
 
@@ -92,7 +92,7 @@
 			<! ISSUE NARRATIVE GOES HERE - text or image>
 
 			{% if n.details and n.details.strip %}
-				{{ n.details }}
+				{{ n.details|striptags }}
 
 			{% else %}
 

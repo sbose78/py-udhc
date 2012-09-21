@@ -120,12 +120,14 @@ body
 {
 
 	border: solid;
-	border-color: #3178F0;
+	text-align: center;
 	background-color: white;
 	color: black;
 	padding: 6px;
 	border-radius: 5px;
-	width: 90%;
+	width:30%;
+	margin-left: 30%;
+
 
 }
 
