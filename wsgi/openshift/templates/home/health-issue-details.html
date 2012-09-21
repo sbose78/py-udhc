@@ -79,11 +79,11 @@
 
 					<br>
 					<br>
-
+{{ for n in narrative }}
 
 		<div id="issue_about">
 
-			{{ narrative.about }}
+			{{ n.about }}
 
 		</div>					
 
@@ -91,8 +91,8 @@
 
 			<! ISSUE NARRATIVE GOES HERE - text or image>
 
-			{% if narrative.details and narrative.details.strip %}
-				{{ narrative.details }}
+			{% if n.details and n.strip %}
+				{{ n.details }}
 
 			{% else %}
 
@@ -106,7 +106,7 @@
 
 		</div>					
 
-
+{{ endfor }}
 
 			<div id="gallery-issue">
 			    <ul>
