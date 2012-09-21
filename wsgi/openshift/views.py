@@ -48,7 +48,7 @@ def health_case(request):
 
 	collection_healthcase=db['healthcase']
 	narrative=collection_healthcase.find({
-		"_id":health_case_id
+		"_id":ObjectId(health_case_id)
 	})
 
 	t=loader.get_template('home/health-issue-details.html')
