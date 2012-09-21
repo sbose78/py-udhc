@@ -71,7 +71,7 @@
 
 
 					<div id= 'patient_name' >
-						{{ patient_name }}
+						{{ narrative.name }}
 					</div>
 
 					<div class="divider">
@@ -92,13 +92,13 @@
 			<! ISSUE NARRATIVE GOES HERE - text or image>
 
 			{% if narrative.details and narrative.details.strip %}
-			{{ narrative.details }}
+				{{ narrative.details }}
 
 			{% else %}
 
-			 <a href="https://udhc1-nodejstest.rhcloud.com/my_image/{{ narrative.file_id }}" title="">
-			          <img src="photos/https://udhc1-nodejstest.rhcloud.com/my_image/{{ narrative.file_id }}" width="142" height="142" alt="Couldnt display image" />
-			  </a>
+				 <a href="https://udhc1-nodejstest.rhcloud.com/my_image/{{ narrative.file_id }}" title="">
+				          <img src="photos/https://udhc1-nodejstest.rhcloud.com/my_image/{{ narrative.file_id }}" width="142" height="142" alt="Couldnt display image" />
+				  </a>
 
 			{% endif %}
 
