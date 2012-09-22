@@ -124,7 +124,8 @@
 								{% endfor %}
 
 								{% for i in range(0,len(unique_names_list)) %}
-									<option value="{{ unique_names_list[i] }}">{{ unique_names_list[i] }} 
+									<option value="{{ str(unique_names_list[i]) }}">
+													{{ str(unique_names_list[i]) }} 
 									</option>
 								{% endfor %}
 									 </select>
