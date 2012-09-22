@@ -54,7 +54,7 @@ def new_narrative(request):
 	}
 
 
-	 return render_to_response('home/new_narrative.html',dictionary, context_instance=RequestContext(request))
+	return render_to_response('home/new_narrative.html',dictionary, context_instance=RequestContext(request))
 
 def fb(request):
 	 return render_to_response('home/fb-auth.html',{ }, context_instance=RequestContext(request))
