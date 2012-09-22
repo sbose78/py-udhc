@@ -30,11 +30,36 @@ def health_record(request):
 	})
 	return HttpResponse(t.render(c))    
 
+
+# displays form to enter a new narrative
+
 def new_narrative(request):
-	 return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
+
+	connection=Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
+	db=connection['BOSE']
+	collection=db['scientific_name']
+	scientific_name_list =collection.find_one({
+		"status":"unused"
+	})
+
+	collection=db['healthcase']
+	returned_names=collection.group(["name"],None,{'list_a':[]},'function(obj,prev){prev.list.push(obj)}')
+	unique_names=[]
+	for i in range(0,len(returned_names)):
+		unique_names.append(returned_names[i]['list_a'][0]['name'])
+
+	dictionary={
+		"scientific_name_list":scientific_name_list
+		"unique_names_list":unique_names
+	}
+
+
+	 return render_to_response('home/new_narrative.html',dictionary, context_instance=RequestContext(request))
 
 def fb(request):
 	 return render_to_response('home/fb-auth.html',{ }, context_instance=RequestContext(request))
+
+# display details of a specific health case
 
 def health_case(request):
 
@@ -61,7 +86,7 @@ def health_case(request):
 	return HttpResponse(t.render(c))
 
 
-#upload file or health case
+#upload file or health case narrative
 
 def process_health_case(request):
 	about = request.POST['about']
@@ -113,14 +138,4 @@ def add_more_reports(request):
 	return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
 	
 def new_health_report(request):
-	connection=Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
-	db=connection['BOSE']
-	collection=db['scientific_name']
-	scientific_name_list =collection.find_one({
-		"status":"unused"
-	})
-
-	dictionary={
-		"scientific_name_list":scientific_name_list
-	}
 	return render_to_response('home/new_health_report.html',dictionary, context_instance=RequestContext(request))

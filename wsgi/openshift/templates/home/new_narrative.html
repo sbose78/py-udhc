@@ -116,7 +116,18 @@
 								<br>
 								<br>
 
-								<label> Name of the care-seeker:</label> : &nbsp <input name="name" value="text">
+								<label> Name of the care-seeker:</label> : 
+
+									<select name="name">
+								{% for n in scientific_name_list %}
+									 	<option value="n.name"> **NEW**({{ n.name }}) </option>
+								{% endfor %}
+
+								{% for i in range(0,len(unique_names_list)) %}
+									<option value="{{ unique_names_list[i] }}">{{ unique_names_list[i] }} 
+									</option>
+								{% endfor %}
+									 </select>
 								
 
 								<br>
