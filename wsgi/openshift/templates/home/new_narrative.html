@@ -123,9 +123,9 @@
 									 	<option value="n.name"> **NEW**({{ n.name }}) </option>
 								{% endfor %}
 
-								{% for i in range(0,len(unique_names_list)) %}
-									<option value="{{ str(unique_names_list[i]) }}">
-													{{ str(unique_names_list[i]) }} 
+								{% for i in unique_names_list %}
+									<option value="{{ i }}">
+													{{ i }}
 									</option>
 								{% endfor %}
 									 </select>
