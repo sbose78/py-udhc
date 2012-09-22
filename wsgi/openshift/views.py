@@ -49,7 +49,7 @@ def new_narrative(request):
 		unique_names.append(returned_names[i]['list_a'][0]['name'])
 
 	dictionary={
-		"scientific_name_list":scientific_name_list
+		"scientific_name_list":scientific_name_list,
 		"unique_names_list":unique_names
 	}
 
