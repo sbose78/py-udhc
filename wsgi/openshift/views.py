@@ -43,7 +43,7 @@ def new_narrative(request):
 	})
 
 	collection=db['healthcase']
-	returned_names=collection.group(["name"],None,{'list_a':[]},'function(obj,prev){prev.list.push(obj)}')
+	returned_names=collection.group(["name"],None,{'list_a':[]},'function(obj,prev){prev.list_a.push(obj)}')
 	unique_names=[]
 	for i in range(0,len(returned_names)):
 		unique_names.append(returned_names[i]['list_a'][0]['name'])
