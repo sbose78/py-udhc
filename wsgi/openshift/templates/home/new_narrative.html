@@ -120,8 +120,8 @@
 
 									<select name="name">
 								
-									 	<option value="{{ scientific_name.name }}"> 
-									 	**NEW**( {{ scientific_name.name }} ) </option>
+									 	<option value="{{ scientific_name.name.strip }}"> 
+									 	**NEW**( {{ scientific_name.name.strip }} ) </option>
 								
 
 								{% for i in unique_names_list %}
