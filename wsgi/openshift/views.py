@@ -38,18 +38,23 @@ def new_narrative(request):
 	connection=Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
 	db=connection['BOSE']
 	collection=db['scientific_name']
+
+
+	# change this name later. This returns just one JSON object. Not a collection.
+	# scientific_name_list needs to renamed to scientific_name
+
 	scientific_name_list =collection.find_one({
 		"status":"unused"
 	})
 
 	collection1=db['healthcase']
-	returned_names=collection1.group(["name"],None,{'list_a':[]},'function(obj,prev){prev.list_a.push(obj)}')
+	returned_names=collection.group(["name"],None,{'list_a':[]},'function(obj,prev){prev.list_a.push(obj)}')
 	unique_names=[]
 	for i in range(0,len(returned_names)):
 		unique_names.append(returned_names[i]['list_a'][0]['name'])
 
 	dictionary={
-		"scientific_name_list":scientific_name_list,
+		"scientific_name":scientific_name_list,
 		"unique_names_list":unique_names
 	}
 

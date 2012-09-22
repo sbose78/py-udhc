@@ -119,9 +119,10 @@
 								<label> Name of the care-seeker:</label> : 
 
 									<select name="name">
-								{% for n in scientific_name_list %}
-									 	<option value="{{ n.name }}"> **NEW**({{ n.name }}) </option>
-								{% endfor %}
+								
+									 	<option value="{{ scientific_name.name }}"> 
+									 	**NEW**( {{ scientific_name.name }} ) </option>
+								
 
 								{% for i in unique_names_list %}
 									<option value="{{ i }}">
