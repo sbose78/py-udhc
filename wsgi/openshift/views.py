@@ -143,4 +143,11 @@ def add_more_reports(request):
 	return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
 	
 def new_health_report(request):
-	return render_to_response('home/new_health_report.html',{}, context_instance=RequestContext(request))
+	connection=Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
+	db=connection['BOSE']
+	collection=db['healthcase']
+	health_cases =collection.find()
+	dictionary={
+		"health_cases":health_cases
+	}
+	return render_to_response('home/new_health_report.html',dictionary, context_instance=RequestContext(request))
