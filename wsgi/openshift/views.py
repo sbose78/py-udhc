@@ -157,6 +157,6 @@ def new_health_report(request):
 		})
 
 	dictionary={
-		"health_cases":health_case2
+		"health_cases":health_cases2
 	}
 	return render_to_response('home/new_health_report.html',dictionary, context_instance=RequestContext(request))
