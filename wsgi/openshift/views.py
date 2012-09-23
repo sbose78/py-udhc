@@ -146,8 +146,17 @@ def new_health_report(request):
 	connection=Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
 	db=connection['BOSE']
 	collection=db['healthcase']
-	health_cases =collection.find()
+	health_cases1 =collection.find()
+	health_cases2=[]
+	for case in health_cases1:
+		idcase=case['_id']
+		about=case['about']
+		health_cases2.append({
+			"idcase":idcase,
+			"about":about
+		})
+
 	dictionary={
-		"health_cases":health_cases
+		"health_cases":health_case2
 	}
 	return render_to_response('home/new_health_report.html',dictionary, context_instance=RequestContext(request))
