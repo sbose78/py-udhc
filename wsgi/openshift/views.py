@@ -143,4 +143,4 @@ def add_more_reports(request):
 	return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
 	
 def new_health_report(request):
-	return render_to_response('home/new_health_report.html',dictionary, context_instance=RequestContext(request))
+	return render_to_response('home/new_health_report.html',{}, context_instance=RequestContext(request))
