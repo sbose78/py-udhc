@@ -71,7 +71,7 @@ def new_narrative(request):
 
 	dictionary={
 		"scientific_name":scientific_name_list,
-		"unique_names_list":unique_names
+		"unique_names_list":unique_names,
 		"full_narrative_list":health_cases2
 	}
 
