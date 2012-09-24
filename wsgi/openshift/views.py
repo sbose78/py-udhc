@@ -53,9 +53,26 @@ def new_narrative(request):
 	for i in range(0,len(returned_names)):
 		unique_names.append(returned_names[i]['list_a'][0]['name'])
 
+
+	## Get all the previously uploaded healthcases.
+
+	collection2=db['healthcase']
+	health_cases1 =collection2.find()
+	health_cases2=[]
+	for case in health_cases1:
+		idcase=case['_id']
+		about=case['about']
+		health_cases2.append({
+			"idcase":idcase,
+			"about":about
+			"name":name
+		})
+
+
 	dictionary={
 		"scientific_name":scientific_name_list,
 		"unique_names_list":unique_names
+		"full_narrative_list":health_cases2
 	}
 
 

@@ -167,23 +167,20 @@
 					<label>The following issues were previously uploaded</label>
 
 					<br><br>
-
+			{% for narrative in full_narrative_list %}
 
 					<div class="p_case">
-						<a href="https://www.google.com/">Click here</a>
+<a href="https://udhc1-nodejstest.rhcloud.com/health_case.udhc?health_case_id={{narrative.id}}">
+
+				[{{narrative.name}}]{{narrative.about}}
+
+</a>
 
 					</div>
+			{% endfor %}
 
 				
-					<div class="p_case">
-							<a href="https://www.google.com/">Click here</a>
-
-					</div>
-
-					<div class="p_case">
-							<a href="https://www.google.com/">Click here</a>
-					</div>
-				</div>
+  			</div>
 
 
 			</td>
