@@ -64,7 +64,7 @@ def new_narrative(request):
 		about=case['about']
 		health_cases2.append({
 			"idcase":idcase,
-			"about":about
+			"about":about,
 			"name":name
 		})
 
