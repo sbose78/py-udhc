@@ -173,7 +173,6 @@ def new_health_report(request):
 			"idcase":idcase,
 			"about":about
 		})
-
 	dictionary={
 		"health_cases":health_cases2
 	}

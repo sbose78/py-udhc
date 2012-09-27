@@ -63,7 +63,8 @@ body
 		
 		padding: 5px;
 		width: 400px;
-		vertical-alige; }
+		vertical-align: middle;
+}
 .gallery ul img {
 		border: 5px solid #3e3e3e;
 		border-width: 5px 5px 10px;
@@ -133,9 +134,6 @@ body
 	background-color: white;
 	border-style: solid;
 	border-color: ;
-
-
-
 }
 
 .p_case
@@ -143,22 +141,13 @@ body
 	margin-top: 10px;
 	padding: 5px;
 	border-radius: 4px;
+	background-color: #E7EBF2;
 	
-	border-style: solid;
-	border-top: #0D5995;
-	cursor: pointer;
-
-
 	
+
 }
 
 .p_case a 
-{
-	
-	text-decoration: none;
-	color: black;
-
-	
-
-
+{	
+		color: black;
 }
