@@ -6,6 +6,7 @@ from django.shortcuts import get_object_or_404, render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
 from django.template import Context, RequestContext,loader
 from bson.objectid import ObjectId
+import datetime
 
 my_sql_connection = Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
 my_sql_connection_string='mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE'
@@ -47,12 +48,16 @@ def new_narrative(request):
 		"status":"unused"
 	})
 
+	sci_name_id=scientific_name_list['_id']
+
+	collection.update({"_id": sci_name_id}, {"$set": {"status": "peeked"}})
+
 	collection1=db['healthcase']
 	returned_names=collection1.group(["name"],None,{'list_a':[]},'function(obj,prev){prev.list_a.push(obj)}')
 	unique_names=[]
+	sci_name_id=''
 	for i in range(0,len(returned_names)):
 		unique_names.append(returned_names[i]['list_a'][0]['name'])
-
 
 	## Get all the previously uploaded healthcases.
 
@@ -126,7 +131,12 @@ def process_health_case(request):
 		data={ "about":about, "file_id":file_id , "name" : sci_name }
 		collection.insert(data)
 	else:
-		data={"about":about,"details":details, "name" : sci_name }
+		data={
+			"about":about,
+			"details":details, 
+			"name" : sci_name , 
+			"time": datetime.datetime.timestamp()
+		}
 		collection.insert(data)		
 	return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
 ##
@@ -156,7 +166,14 @@ def add_more_reports(request):
 	
 	fs=gridfs.GridFS(db)
 	file_id = fs.put(image,filename=about)
-	data={ "patient_id" : patient_id, "health_case_id":health_case_id, "about":about, "file_id":file_id }
+	data=
+	{
+		 "patient_id" : patient_id, 
+		 "health_case_id":health_case_id, 
+		 "about":about, 
+		 "file_id":file_id ,
+		 "time": datetime.datetime.timestamp()
+	}
 	collection.insert(data)
 	return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
 	
