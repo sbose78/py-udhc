@@ -156,6 +156,8 @@ def my_image(request,image_id):
 	image_data = fs.get(ObjectId(image_id))
 	return HttpResponse(image_data, mimetype="image/png")
 
+#add more reports
+
 def add_more_reports(request):
 	about = request.POST['about']
 	health_case_id=request.POST['health_case_id']
@@ -176,7 +178,7 @@ def add_more_reports(request):
 		 "time":datetime.datetime.utcnow()
 	}
 	collection.insert(data)
-	return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
+	return HttpResponseRedirect("/new_narrative.udhc")
 	
 def new_health_report(request):
 	connection=Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
