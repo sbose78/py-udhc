@@ -1,6 +1,7 @@
 import os
 import gridfs
 from django.http import HttpResponse
+from django.http import HttpResponseRedirect
 from pymongo.connection import Connection
 from django.shortcuts import get_object_or_404, render_to_response
 from django.http import HttpResponseRedirect, HttpResponse
@@ -138,7 +139,8 @@ def process_health_case(request):
 			"time": datetime.datetime.utcnow()
 		}
 		collection.insert(data)		
-	return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
+
+	return HttpResponseRedirect("/new_narrative.udhc")
 ##
 #collection = db['controller']
 	#data={"a1":about, "b1": details}
