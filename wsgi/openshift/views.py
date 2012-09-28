@@ -135,7 +135,7 @@ def process_health_case(request):
 			"about":about,
 			"details":details, 
 			"name" : sci_name , 
-			"time": datetime.datetime.timestamp()
+			"time": datetime.datetime.utcnow()
 		}
 		collection.insert(data)		
 	return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
@@ -171,7 +171,7 @@ def add_more_reports(request):
 		 "health_case_id":health_case_id, 
 		 "about":about, 
 		 "file_id":file_id ,
-		 "time": datetime.datetime.timestamp()
+		 "time":datetime.datetime.utcnow()
 	}
 	collection.insert(data)
 	return render_to_response('home/new_narrative.html',{ }, context_instance=RequestContext(request))
