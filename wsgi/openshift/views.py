@@ -166,8 +166,7 @@ def add_more_reports(request):
 	
 	fs=gridfs.GridFS(db)
 	file_id = fs.put(image,filename=about)
-	data=
-	{
+	data={
 		 "patient_id" : patient_id, 
 		 "health_case_id":health_case_id, 
 		 "about":about, 
