@@ -24,11 +24,12 @@ body
 	border-style: solid;
 	border-color: white;
 	background-color: #0D5995;
-	width: 20%;
+	width: 15%;
 	text-align: center;
 	float: left;
 	color: white;
 	cursor: pointer;
+	margin-top: 7px;
 }
 
 #patient_name_details
