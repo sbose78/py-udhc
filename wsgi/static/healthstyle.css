@@ -16,11 +16,9 @@ body
 	float: left;
 	color: white;
 	cursor: pointer;
-
-
 }
-
 .menu_button
+{
 	padding: 5px;
 	border-radius: 20px;
 	border-style: solid;
@@ -31,8 +29,6 @@ body
 	float: left;
 	color: white;
 	cursor: pointer;
-
-
 }
 
 #patient_name_details
