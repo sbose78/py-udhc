@@ -138,14 +138,22 @@ def process_health_case(request):
 			pass
 		new_name=new_name+sci_name[i]
 	sci_name=new_name
-
+	details=details+" \n " details_local
 	if 'image_scan' in request.FILES.keys():
 		image=request.FILES['image_scan']
 		fs=gridfs.GridFS(db)
 		file_id = fs.put(image,filename="about")
 		data={ "about":about, "file_id":file_id , "name" : sci_name }
 		collection.insert(data)
-		details = details + " " +details_local
+
+#	elif details_local != "":
+#		data={
+#			"about":about,
+#			"details":details_local,
+#			"name" : sci_name , 
+#			"time": datetime.datetime.utcnow()
+#		}
+#		collection.insert(data)	
 	else:
 		data={
 			"about":about,
