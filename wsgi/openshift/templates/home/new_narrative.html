@@ -1,6 +1,6 @@
 <html>                                                                  
  <head>
-
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
 <link rel="stylesheet" type="text/css" href="healthstyle.css" media="screen" />                                      
 <script type="text/javascript" src="js/jquery.js"></script>          
 
@@ -19,6 +19,42 @@
  <script type="text/javascript" src="cleditor/jquery.cleditor.js"></script>
 
 
+<! Google Transliterate >
+
+
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+
+
+<script type="text/javascript">
+
+      // Load the Google Transliterate API
+      google.load("elements", "1", {
+            packages: "transliteration"
+          });
+
+      function onLoad() {
+        var options = {
+            sourceLanguage:
+                google.elements.transliteration.LanguageCode.ENGLISH,
+            destinationLanguage:
+                [google.elements.transliteration.LanguageCode.BENGALI],
+            shortcutKey: 'ctrl+g',
+            transliterationEnabled: true
+        };
+
+        // Create an instance on TransliterationControl with the required
+        // options.
+        var control =
+            new google.elements.transliteration.TransliterationControl(options);
+
+        // Enable transliteration in the textbox with id
+        // 'transliterateTextarea'.
+        control.makeTransliteratable(['narrative_text']);
+      }
+      google.setOnLoadCallback(onLoad);
+    </script>
+
+<! end of Google transliterate API >
 
 
 	        <script type="text/javascript">                                         
@@ -77,11 +113,11 @@
 		
 
 					<div class="menu_button" >
-					REPORTS
+					HEALTH REPORTS
 					</div>
 
 					<div class="menu_button" >
-					CASES
+					HEALTH CASES
 					</div>
 
 					<div class="menu_button" >
