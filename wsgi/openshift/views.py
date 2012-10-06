@@ -129,7 +129,7 @@ def process_health_case(request):
 
 	#add the pincode to the unique name
 
-	sci_name=str.split(sci_name)
+	sci_name=str.split(str(sci_name))
 	new_name=""
 	for i in range(0,len(sci_name)):
 		if i == 0 :
