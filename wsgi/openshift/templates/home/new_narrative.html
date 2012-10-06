@@ -38,7 +38,7 @@
                 google.elements.transliteration.LanguageCode.ENGLISH,
             destinationLanguage:
                 [google.elements.transliteration.LanguageCode.BENGALI],
-            shortcutKey: 'ctrl+g',
+            shortcutKey: 'ctrl+y',
             transliterationEnabled: true
         };
 
@@ -52,6 +52,8 @@
         control.makeTransliteratable(['narrative_text']);
       }
       google.setOnLoadCallback(onLoad);
+
+	alert("executed");
     </script>
 
 <! end of Google transliterate API >
