@@ -120,6 +120,7 @@ def health_case(request):
 def process_health_case(request):
 	about = request.POST['about']
 	details = request.POST['narrative_text']
+	details_local=request.POST['narrative_local']
 	sci_name=request.POST['name']
 	connection = Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
 	db=connection['BOSE']
@@ -135,6 +136,7 @@ def process_health_case(request):
 		data={
 			"about":about,
 			"details":details, 
+			"details_local":details_local,
 			"name" : sci_name , 
 			"time": datetime.datetime.utcnow()
 		}
