@@ -138,7 +138,7 @@ def process_health_case(request):
 			pass
 		new_name=new_name+sci_name[i]
 	sci_name=new_name
-	details=details+" \n " details_local
+	details=details+" \n "+ details_local
 	if 'image_scan' in request.FILES.keys():
 		image=request.FILES['image_scan']
 		fs=gridfs.GridFS(db)
