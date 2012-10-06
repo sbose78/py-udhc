@@ -121,10 +121,23 @@ def process_health_case(request):
 	about = request.POST['about']
 	details = request.POST['narrative_text']
 	details_local=request.POST['narrative_local']
+	pincode=request.POST['pincode']
 	sci_name=request.POST['name']
 	connection = Connection('mongodb://sbose78:ECDW=19YRS@staff.mongohq.com:10068/BOSE')
 	db=connection['BOSE']
 	collection = db['healthcase']
+
+	#add the pincode to the unique name
+
+	sci_name=str.split(sci_name)
+	new_name=""
+	for i in range(0,len(sci_name)):
+		if i == 0 :
+			sci_name[0]=sci_name[0]+pincode
+		else:
+			pass
+		new_name=new_name+sci_name[i]
+	sci_name=new_name
 
 	if 'image_scan' in request.FILES.keys():
 		image=request.FILES['image_scan']
