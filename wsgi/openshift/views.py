@@ -132,7 +132,7 @@ def process_health_case(request):
 		file_id = fs.put(image,filename="about")
 		data={ "about":about, "file_id":file_id , "name" : sci_name }
 		collection.insert(data)
-	else if details_local!="":
+	else if details_local != "":
 		data={
 			"about":about,
 			"details":details_local,
